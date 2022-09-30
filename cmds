@@ -33,3 +33,6 @@ docker volume ls
 docker volume prune
 
 docker-compose up -d
+docker-compose down -v
+-- rebuild 
+docker-compose up -d --build

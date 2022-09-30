@@ -3,7 +3,7 @@ services:
   node-docker:
     build: .
     ports:
-      - "4001:4001"
+      - "5001:4001"
     volumes:
       - ./:/app:ro
       - /app/node_modules
