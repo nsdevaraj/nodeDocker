@@ -1,0 +1,17 @@
+docker run -v $(pwd):/app:ro -v /app/node_modules -p 4000:3000 -d --name expressnode nodedocker
+docker exec -it expressnode bash     
+
+bind mount
+$(pwd):/app 
+
+bind oneway
+$(pwd):/app:ro
+
+dont sync container
+-v /app/node_modules
+
+list images:
+docker image ls
+
+list of containers running:
+docker ps
