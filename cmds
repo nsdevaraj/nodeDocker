@@ -1,6 +1,13 @@
 docker run -v $(pwd):/app:ro -v /app/node_modules -p 4000:3000 -d --name expressnode nodedocker
 docker exec -it expressnode bash     
 
+$(pwd):/app
+hostmachine path:container path
+
+4000:3000
+hostmachine:container
+
+
 bind mount
 $(pwd):/app 
 
@@ -24,3 +31,5 @@ docker run -v $(pwd):/app:ro -v /app/node_modules --env-file ./.env -p 4000:3001
 
 docker volume ls
 docker volume prune
+
+docker-compose up -d
