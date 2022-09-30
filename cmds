@@ -15,3 +15,12 @@ docker image ls
 
 list of containers running:
 docker ps
+
+
+docker rm expressnode -f
+docker rm expressnode -fv
+docker run -v $(pwd):/app:ro -v /app/node_modules --env-file ./.env -p 4000:3001 -d --name expressnode nodedocker
+
+
+docker volume ls
+docker volume prune
