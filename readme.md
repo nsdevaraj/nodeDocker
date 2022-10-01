@@ -1,6 +1,9 @@
 docker build --pull --rm -f "Dockerfile" -t nodedocker2:latest "." --no-cache  
 docker rm containername -f
 
+# breaks binding from host machine to container
+-v /app/node_modules 
+
 # dockerignore will be ignored for "volume mount"
 docker run -v $(pwd):/app:ro -v /app/node_modules -p 4000:3000 -d --name expressnode nodedocker
 docker exec -it expressnode bash     
@@ -93,3 +96,5 @@ docker exec -it nodedocker-node-docker-1 bash
 
 # up a specific container without dependencies
  docker-compose -f docker-compose.yml -f docker-compose-prod.yml up -d --no-deps node-docker
+
+ # ends

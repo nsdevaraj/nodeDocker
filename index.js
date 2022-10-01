@@ -18,7 +18,7 @@ const connectRetry = () => {
 }
 connectRetry()
 app.get('/', (req, res) => {
-    res.send("<h1>mongooo Header here!!</h1>")
+    res.send("<h1>mongooo Headers here!!</h1>")
 })
 console.log(process.env.PORT, 'port env')
 const port = process.env.PORT || 4001
