@@ -77,3 +77,7 @@ docker exec -it nodedocker-node-docker-1 bash
  # console logs
 
  docker logs nodedocker-node-docker-1 
+
+ # networks
+
+ docker network ls
