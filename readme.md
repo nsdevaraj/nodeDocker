@@ -34,15 +34,16 @@ docker volume prune
 
 docker-compose up -d
 docker-compose down -v
+
 ##-- rebuild 
 docker-compose up -d --build
 
 printenv
-docker exec -it nodedocker-node-docker-1 bash  
+docker exec -it nodedocker-node-docker-1 bash
 
 
  #combine docker compose
  #dev environment
  docker-compose -f docker-compose.yml -f docker-compose-dev.yml up -d
  #prod env
- docker-compose -f docker-compose.yml -f docker-compose-prod.yml up -d
+ docker-compose -f docker-compose.yml -f docker-compose-prod.yml up -d --build
