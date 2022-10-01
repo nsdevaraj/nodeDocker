@@ -70,3 +70,10 @@ docker exec -it nodedocker-node-docker-1 bash
 
 # bash mongo
  docker exec -it nodedocker-mongo-1 mongosh -u "dev" -p "pwd"
+
+# inspect ip from network settings 
+ docker inspect nodedocker-node-docker-1 
+
+ # console logs
+
+ docker logs nodedocker-node-docker-1 
