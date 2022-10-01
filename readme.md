@@ -35,6 +35,8 @@ docker volume prune
 docker-compose up -d
 docker-compose down -v
 
+--no-deps
+
 ## -- rebuild 
 docker-compose up -d --build
 
@@ -84,3 +86,6 @@ docker exec -it nodedocker-node-docker-1 bash
 
 # without cache
  docker-compose up -d --build --no-cache
+
+# up a specific container without dependencies
+ docker-compose -f docker-compose.yml -f docker-compose-prod.yml up -d --no-deps node-docker
