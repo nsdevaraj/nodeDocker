@@ -6,6 +6,6 @@ services:
       args: 
         NODE_ENV: development
     volumes:
-      - ./:/app:ro
+      - .:/app:ro
       - /app/node_modules
     command: npm run dev

@@ -3,6 +3,5 @@ node_modules
 .dockerignore
 .git
 .gitignore
-cmds
 readme.md
 docker-compose*
