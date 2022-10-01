@@ -63,7 +63,7 @@ docker exec -it nodedocker-node-docker-1 bash
  show dbs
 
  # add record
- db.books.insert({'name': 'harry potter'})
+ db.books.insertOne({'name': 'harry potter'})
 
 
  db.books.find()
