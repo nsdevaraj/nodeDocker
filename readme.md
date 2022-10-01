@@ -2,25 +2,25 @@ docker run -v $(pwd):/app:ro -v /app/node_modules -p 4000:3000 -d --name express
 docker exec -it expressnode bash     
 
 $(pwd):/app
-hostmachine path:container path
+#hostmachine path:container path
 
 4000:3000
-hostmachine:container
+#hostmachine:container
 
 
-bind mount
+#bind mount
 $(pwd):/app 
 
-bind oneway
+#bind oneway as read only container
 $(pwd):/app:ro
 
-dont sync container
+#dont sync container
 -v /app/node_modules
 
-list images:
+#list images:
 docker image ls
 
-list of containers running:
+#list of containers running:
 docker ps
 
 
@@ -34,8 +34,15 @@ docker volume prune
 
 docker-compose up -d
 docker-compose down -v
--- rebuild 
+##-- rebuild 
 docker-compose up -d --build
 
 printenv
- docker exec -it nodedocker-node-docker-1 bash  
+docker exec -it nodedocker-node-docker-1 bash  
+
+
+ #combine docker compose
+ #dev environment
+ docker-compose -f docker-compose.yml -f docker-compose-dev.yml up -d
+ #prod env
+ docker-compose -f docker-compose.yml -f docker-compose-prod.yml up -d
