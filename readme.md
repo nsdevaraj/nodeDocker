@@ -1,3 +1,7 @@
+docker build --pull --rm -f "Dockerfile" -t nodedocker2:latest "." --no-cache  
+docker rm containername -f
+
+# dockerignore will be ignored for "volume mount"
 docker run -v $(pwd):/app:ro -v /app/node_modules -p 4000:3000 -d --name expressnode nodedocker
 docker exec -it expressnode bash     
 
