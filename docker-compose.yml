@@ -8,6 +8,8 @@ services:
       - PORT=4001
       - MONGO_USER=dev
       - MONGO_PWD=pwd
+    depends_on:
+      - mongo
   mongo:
     image: mongo
     environment:
