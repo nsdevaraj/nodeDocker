@@ -5,3 +5,4 @@ node_modules
 .gitignore
 cmds
 readme.md
+docker-compose*
