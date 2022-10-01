@@ -20,6 +20,7 @@ connectRetry()
 app.get('/', (req, res) => {
     res.send("<h1>mongooo Headers here!!</h1>")
 })
+app.use(express.json())
 console.log(process.env.PORT, 'port env')
 //localhost:3000/posts
 app.use("/posts", postRouter)

@@ -72,11 +72,11 @@ exports.updatePost = async(req, res, next) => {
 
 
 //posts/:id
-exports.deletePost = async(req, res, next) => {
+exports.deletePost = async(req, res) => {
     try {
         const post = await Post.findByIdAndDelete(req.params.id);
         res.status(200).json({ 
-            status: 'success', 
+            status: 'success'
         })
     } catch (error) {
         res.status(400).json({ status: 'fail' })
