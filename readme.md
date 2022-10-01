@@ -47,3 +47,26 @@ docker exec -it nodedocker-node-docker-1 bash
  docker-compose -f docker-compose.yml -f docker-compose-dev.yml up -d
  #prod env
  docker-compose -f docker-compose.yml -f docker-compose-prod.yml up -d --build
+
+# login mongo
+ mongo -u "dev" -p "pwd"
+ # current db
+ db 
+ 
+ # create table
+
+ use mydb
+ 
+ 
+ # list databases
+
+ show dbs
+
+ # add record
+ db.books.insert({'name': 'harry potter'})
+
+
+ db.books.find()
+
+# bash mongo
+ docker exec -it nodedocker-mongo-1 mongosh -u "dev" -p "pwd"
