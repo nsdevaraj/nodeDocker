@@ -14,11 +14,9 @@ let redisClient = redis.createClient({
         port: REDIS_PORT
     }
 })
-/*
-redisClient.connect();
 redisClient.on('connect', () => console.log('Connected to Redis!'));
 redisClient.on('error', err => console.error('ERR:REDIS:', err));
-*/
+
 const postRouter = require('./routes/postRoutes')
 const userRouter = require('./routes/userRoutes')
 
@@ -42,10 +40,21 @@ app.get('/', (req, res) => {
     res.send("<h1>mongooo Headers here!!</h1>")
 })
  
+connectRedis = async () => {
+
+    try {
+        redisClient.connect();
+    } catch (error) {
+        console.log(error)
+    }
+
+}
+connectRedis()
 app.use(
    session({
      store: new RedisStore({ client: redisClient}),
      resave:false,
+     name: 'innovate',
      saveUninitialized:false,
      secret:SESSION_SECRET,
      cookie:{

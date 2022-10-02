@@ -100,3 +100,8 @@ docker exec -it nodedocker-node-docker-1 bash
  # renew running volume without down
 --renew-anon-volumes 
 -V
+
+
+redis-cli
+
+KEYS *
