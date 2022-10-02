@@ -30,7 +30,7 @@ exports.login = async (req, res) => {
         const isCorrect = await bcrypt.compare(password, user.password)
          if (isCorrect) {
             res.status(200).json({
-                status: 'success login'+hashpwd+' '+user.password,
+                status: 'success login',
             })
         }else{
 

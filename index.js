@@ -33,18 +33,18 @@ connectRetry()
 app.get('/', (req, res) => {
     res.send("<h1>mongooo Headers here!!</h1>")
 })
-
+/*
 app.use(session({
     store: new RedisStore({client: redisClient}),
     secret: SESSION_SECRET,
     cookie:{
         secure:false,
-        resave:false,
-        saveUninitialized: false,
+        //resave:false,
+        //saveUninitialized: false,
         httpOnly:true,
         maxAge: 30000
     }
-}))
+}))*/
 
 app.use(express.json())
 
