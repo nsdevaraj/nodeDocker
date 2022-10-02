@@ -97,4 +97,6 @@ docker exec -it nodedocker-node-docker-1 bash
 # up a specific container without dependencies
  docker-compose -f docker-compose.yml -f docker-compose-prod.yml up -d --no-deps node-docker
 
- # ends
+ # renew running volume without down
+--renew-anon-volumes 
+-V

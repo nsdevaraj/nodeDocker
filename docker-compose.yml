@@ -8,6 +8,7 @@ services:
       - PORT=4001
       - MONGO_USER=dev
       - MONGO_PWD=pwd
+      - SESSION_SECRET=secret
     depends_on:
       - mongo
   mongo:
@@ -17,6 +18,10 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=pwd
     volumes:
       - mongodb:/data/db
+  
+  redis:
+    image: redis
+
 
 volumes:
   mongodb:
