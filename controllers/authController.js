@@ -23,8 +23,7 @@ exports.signUp = async (req, res) => {
 exports.login = async (req, res) => {
     const { username, password } = req.body
     
-    try {
-        const hashpwd = await bcrypt.hash(password, 12)
+    try { 
         const user = await User.findOne({username})
         if (!user) res.status(404).json({ status: 'no user fail' })
         const isCorrect = await bcrypt.compare(password, user.password)
@@ -32,8 +31,7 @@ exports.login = async (req, res) => {
             res.status(200).json({
                 status: 'success login',
             })
-        }else{
-
+        }else{ 
             res.status(200).json({
                 status: 'failed pwd login',
             })
